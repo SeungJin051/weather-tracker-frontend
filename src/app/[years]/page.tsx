@@ -6,11 +6,18 @@ export function generateStaticParams() {
   return validYears.map(year => ({ years: year }));
 }
 
-export default function Page({ params }: { params: { years: string } }) {
+interface PageProps {
+  params: {
+    years: string;
+  };
+}
+
+export default function Page({ params }: PageProps) {
   const { years } = params;
 
   if (!validYears.includes(years)) {
-    notFound(); // Redirect to 404 if the year is invalid
+    notFound();
+    return null;
   }
 
   return (
