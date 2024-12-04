@@ -1,0 +1,536 @@
+[
+  {
+    "year": 2018,
+    "data": [
+      {
+        "month": "01",
+        "avgTemp": 23.3,
+        "minTemp": 15.6,
+        "maxTemp": 30.6,
+        "rainfall": 75
+      },
+      {
+        "month": "02",
+        "avgTemp": 3.9,
+        "minTemp": -3.8,
+        "maxTemp": 9.7,
+        "rainfall": 27
+      },
+      {
+        "month": "03",
+        "avgTemp": 18.5,
+        "minTemp": 11.8,
+        "maxTemp": 24.9,
+        "rainfall": 13
+      },
+      {
+        "month": "04",
+        "avgTemp": 15.8,
+        "minTemp": 9.0,
+        "maxTemp": 20.0,
+        "rainfall": 54
+      },
+      {
+        "month": "05",
+        "avgTemp": 23.3,
+        "minTemp": 16.6,
+        "maxTemp": 29.0,
+        "rainfall": 51
+      },
+      {
+        "month": "06",
+        "avgTemp": 13.6,
+        "minTemp": 7.8,
+        "maxTemp": 20.8,
+        "rainfall": 270
+      },
+      {
+        "month": "07",
+        "avgTemp": 11.0,
+        "minTemp": 5.1,
+        "maxTemp": 19.0,
+        "rainfall": 330
+      },
+      {
+        "month": "08",
+        "avgTemp": 24.8,
+        "minTemp": 17.2,
+        "maxTemp": 30.8,
+        "rainfall": 50
+      },
+      {
+        "month": "09",
+        "avgTemp": 11.6,
+        "minTemp": 3.9,
+        "maxTemp": 18.3,
+        "rainfall": 281
+      },
+      {
+        "month": "10",
+        "avgTemp": 21.9,
+        "minTemp": 16.1,
+        "maxTemp": 27.1,
+        "rainfall": 59
+      },
+      {
+        "month": "11",
+        "avgTemp": 15.0,
+        "minTemp": 7.6,
+        "maxTemp": 21.4,
+        "rainfall": 42
+      },
+      {
+        "month": "12",
+        "avgTemp": 4.1,
+        "minTemp": -1.8,
+        "maxTemp": 11.9,
+        "rainfall": 47
+      }
+    ]
+  },
+  {
+    "year": 2019,
+    "data": [
+      {
+        "month": "01",
+        "avgTemp": 15.0,
+        "minTemp": 7.5,
+        "maxTemp": 19.5,
+        "rainfall": 34
+      },
+      {
+        "month": "02",
+        "avgTemp": 8.4,
+        "minTemp": 4.3,
+        "maxTemp": 16.0,
+        "rainfall": 28
+      },
+      {
+        "month": "03",
+        "avgTemp": 5.2,
+        "minTemp": -2.1,
+        "maxTemp": 9.5,
+        "rainfall": 33
+      },
+      {
+        "month": "04",
+        "avgTemp": 14.7,
+        "minTemp": 9.8,
+        "maxTemp": 18.7,
+        "rainfall": 72
+      },
+      {
+        "month": "05",
+        "avgTemp": 16.0,
+        "minTemp": 10.6,
+        "maxTemp": 20.5,
+        "rainfall": 44
+      },
+      {
+        "month": "06",
+        "avgTemp": 21.0,
+        "minTemp": 15.2,
+        "maxTemp": 26.6,
+        "rainfall": 314
+      },
+      {
+        "month": "07",
+        "avgTemp": 13.9,
+        "minTemp": 9.1,
+        "maxTemp": 21.6,
+        "rainfall": 317
+      },
+      {
+        "month": "08",
+        "avgTemp": 11.9,
+        "minTemp": 7.8,
+        "maxTemp": 18.8,
+        "rainfall": 54
+      },
+      {
+        "month": "09",
+        "avgTemp": 18.3,
+        "minTemp": 12.6,
+        "maxTemp": 25.9,
+        "rainfall": 194
+      },
+      {
+        "month": "10",
+        "avgTemp": 23.1,
+        "minTemp": 15.3,
+        "maxTemp": 28.3,
+        "rainfall": 42
+      },
+      {
+        "month": "11",
+        "avgTemp": 9.3,
+        "minTemp": 4.6,
+        "maxTemp": 15.3,
+        "rainfall": 67
+      },
+      {
+        "month": "12",
+        "avgTemp": 1.6,
+        "minTemp": -5.0,
+        "maxTemp": 9.4,
+        "rainfall": 76
+      }
+    ]
+  },
+  {
+    "year": 2020,
+    "data": [
+      {
+        "month": "01",
+        "avgTemp": 12.8,
+        "minTemp": 5.1,
+        "maxTemp": 17.8,
+        "rainfall": 62
+      },
+      {
+        "month": "02",
+        "avgTemp": 14.8,
+        "minTemp": 10.6,
+        "maxTemp": 20.4,
+        "rainfall": 77
+      },
+      {
+        "month": "03",
+        "avgTemp": 10.0,
+        "minTemp": 2.3,
+        "maxTemp": 17.1,
+        "rainfall": 60
+      },
+      {
+        "month": "04",
+        "avgTemp": 6.8,
+        "minTemp": 1.9,
+        "maxTemp": 11.9,
+        "rainfall": 13
+      },
+      {
+        "month": "05",
+        "avgTemp": 16.3,
+        "minTemp": 9.6,
+        "maxTemp": 22.2,
+        "rainfall": 23
+      },
+      {
+        "month": "06",
+        "avgTemp": 16.5,
+        "minTemp": 8.5,
+        "maxTemp": 24.5,
+        "rainfall": 58
+      },
+      {
+        "month": "07",
+        "avgTemp": 19.4,
+        "minTemp": 14.3,
+        "maxTemp": 25.5,
+        "rainfall": 249
+      },
+      {
+        "month": "08",
+        "avgTemp": 24.1,
+        "minTemp": 19.5,
+        "maxTemp": 30.2,
+        "rainfall": 48
+      },
+      {
+        "month": "09",
+        "avgTemp": 20.7,
+        "minTemp": 14.9,
+        "maxTemp": 25.8,
+        "rainfall": 78
+      },
+      {
+        "month": "10",
+        "avgTemp": 9.1,
+        "minTemp": 2.3,
+        "maxTemp": 14.6,
+        "rainfall": 51
+      },
+      {
+        "month": "11",
+        "avgTemp": 16.1,
+        "minTemp": 10.3,
+        "maxTemp": 21.2,
+        "rainfall": 56
+      },
+      {
+        "month": "12",
+        "avgTemp": 15.4,
+        "minTemp": 9.8,
+        "maxTemp": 19.7,
+        "rainfall": 69
+      }
+    ]
+  },
+  {
+    "year": 2021,
+    "data": [
+      {
+        "month": "01",
+        "avgTemp": 2.4,
+        "minTemp": -5.3,
+        "maxTemp": 6.7,
+        "rainfall": 44
+      },
+      {
+        "month": "02",
+        "avgTemp": 26.2,
+        "minTemp": 21.7,
+        "maxTemp": 32.5,
+        "rainfall": 14
+      },
+      {
+        "month": "03",
+        "avgTemp": 17.2,
+        "minTemp": 10.0,
+        "maxTemp": 22.2,
+        "rainfall": 21
+      },
+      {
+        "month": "04",
+        "avgTemp": 9.2,
+        "minTemp": 2.2,
+        "maxTemp": 15.8,
+        "rainfall": 36
+      },
+      {
+        "month": "05",
+        "avgTemp": 24.5,
+        "minTemp": 18.5,
+        "maxTemp": 31.0,
+        "rainfall": 49
+      },
+      {
+        "month": "06",
+        "avgTemp": 11.3,
+        "minTemp": 4.7,
+        "maxTemp": 18.5,
+        "rainfall": 235
+      },
+      {
+        "month": "07",
+        "avgTemp": 10.6,
+        "minTemp": 5.9,
+        "maxTemp": 16.0,
+        "rainfall": 307
+      },
+      {
+        "month": "08",
+        "avgTemp": 8.9,
+        "minTemp": 3.5,
+        "maxTemp": 15.1,
+        "rainfall": 237
+      },
+      {
+        "month": "09",
+        "avgTemp": 11.7,
+        "minTemp": 5.4,
+        "maxTemp": 15.7,
+        "rainfall": 331
+      },
+      {
+        "month": "10",
+        "avgTemp": 20.0,
+        "minTemp": 14.6,
+        "maxTemp": 24.6,
+        "rainfall": 15
+      },
+      {
+        "month": "11",
+        "avgTemp": 9.6,
+        "minTemp": 5.5,
+        "maxTemp": 16.0,
+        "rainfall": 57
+      },
+      {
+        "month": "12",
+        "avgTemp": 19.9,
+        "minTemp": 15.7,
+        "maxTemp": 27.4,
+        "rainfall": 43
+      }
+    ]
+  },
+  {
+    "year": 2022,
+    "data": [
+      {
+        "month": "01",
+        "avgTemp": 21.8,
+        "minTemp": 15.7,
+        "maxTemp": 28.4,
+        "rainfall": 63
+      },
+      {
+        "month": "02",
+        "avgTemp": 6.5,
+        "minTemp": -0.5,
+        "maxTemp": 10.6,
+        "rainfall": 70
+      },
+      {
+        "month": "03",
+        "avgTemp": 24.1,
+        "minTemp": 16.5,
+        "maxTemp": 30.9,
+        "rainfall": 27
+      },
+      {
+        "month": "04",
+        "avgTemp": 7.0,
+        "minTemp": -0.9,
+        "maxTemp": 12.7,
+        "rainfall": 38
+      },
+      {
+        "month": "05",
+        "avgTemp": 25.6,
+        "minTemp": 20.9,
+        "maxTemp": 31.7,
+        "rainfall": 74
+      },
+      {
+        "month": "06",
+        "avgTemp": 14.0,
+        "minTemp": 8.1,
+        "maxTemp": 21.1,
+        "rainfall": 305
+      },
+      {
+        "month": "07",
+        "avgTemp": 19.3,
+        "minTemp": 15.0,
+        "maxTemp": 23.6,
+        "rainfall": 29
+      },
+      {
+        "month": "08",
+        "avgTemp": 18.2,
+        "minTemp": 10.7,
+        "maxTemp": 24.0,
+        "rainfall": 204
+      },
+      {
+        "month": "09",
+        "avgTemp": 12.6,
+        "minTemp": 8.1,
+        "maxTemp": 17.2,
+        "rainfall": 133
+      },
+      {
+        "month": "10",
+        "avgTemp": 5.5,
+        "minTemp": -0.5,
+        "maxTemp": 12.3,
+        "rainfall": 19
+      },
+      {
+        "month": "11",
+        "avgTemp": 16.7,
+        "minTemp": 10.3,
+        "maxTemp": 24.1,
+        "rainfall": 25
+      },
+      {
+        "month": "12",
+        "avgTemp": 23.4,
+        "minTemp": 18.0,
+        "maxTemp": 28.4,
+        "rainfall": 63
+      }
+    ]
+  },
+  {
+    "year": 2023,
+    "data": [
+      {
+        "month": "01",
+        "avgTemp": 0.6,
+        "minTemp": -5.1,
+        "maxTemp": 6.5,
+        "rainfall": 40
+      },
+      {
+        "month": "02",
+        "avgTemp": 14.1,
+        "minTemp": 8.4,
+        "maxTemp": 19.3,
+        "rainfall": 17
+      },
+      {
+        "month": "03",
+        "avgTemp": 7.0,
+        "minTemp": 0.6,
+        "maxTemp": 13.8,
+        "rainfall": 52
+      },
+      {
+        "month": "04",
+        "avgTemp": 21.3,
+        "minTemp": 15.4,
+        "maxTemp": 27.9,
+        "rainfall": 44
+      },
+      {
+        "month": "05",
+        "avgTemp": 19.5,
+        "minTemp": 12.2,
+        "maxTemp": 26.3,
+        "rainfall": 66
+      },
+      {
+        "month": "06",
+        "avgTemp": 17.1,
+        "minTemp": 9.2,
+        "maxTemp": 21.9,
+        "rainfall": 329
+      },
+      {
+        "month": "07",
+        "avgTemp": 23.2,
+        "minTemp": 18.8,
+        "maxTemp": 29.5,
+        "rainfall": 331
+      },
+      {
+        "month": "08",
+        "avgTemp": 7.6,
+        "minTemp": 3.6,
+        "maxTemp": 11.9,
+        "rainfall": 68
+      },
+      {
+        "month": "09",
+        "avgTemp": 12.2,
+        "minTemp": 6.5,
+        "maxTemp": 17.6,
+        "rainfall": 60
+      },
+      {
+        "month": "10",
+        "avgTemp": 11.5,
+        "minTemp": 6.8,
+        "maxTemp": 16.7,
+        "rainfall": 50
+      },
+      {
+        "month": "11",
+        "avgTemp": 9.5,
+        "minTemp": 4.4,
+        "maxTemp": 15.6,
+        "rainfall": 40
+      },
+      {
+        "month": "12",
+        "avgTemp": 9.6,
+        "minTemp": 3.7,
+        "maxTemp": 16.2,
+        "rainfall": 14
+      }
+    ]
+  }
+]
