@@ -1,0 +1,242 @@
+{
+  "weather": [
+    {
+      "date": "11-28",
+      "city": "부산",
+      "temperature": 15,
+      "minTemperature": 10,
+      "description": "맑음"
+    },
+    {
+      "date": "11-29",
+      "city": "부산",
+      "temperature": 14,
+      "minTemperature": 9,
+      "description": "구름 조금"
+    },
+    {
+      "date": "11-30",
+      "city": "부산",
+      "temperature": 12,
+      "minTemperature": 7,
+      "description": "흐림"
+    },
+    {
+      "date": "12-01",
+      "city": "부산",
+      "temperature": 11,
+      "minTemperature": 6,
+      "description": "맑음"
+    },
+    {
+      "date": "12-02",
+      "city": "부산",
+      "temperature": 10,
+      "minTemperature": 5,
+      "description": "구름 많음"
+    },
+    {
+      "date": "12-03",
+      "city": "부산",
+      "temperature": 9,
+      "minTemperature": 4,
+      "description": "바람 많음"
+    },
+    {
+      "date": "12-04",
+      "city": "부산",
+      "temperature": 8,
+      "minTemperature": 3,
+      "description": "맑음"
+    },
+    {
+      "date": "12-05",
+      "city": "부산",
+      "temperature": 7,
+      "minTemperature": 2,
+      "description": "구름 조금"
+    },
+    {
+      "date": "12-06",
+      "city": "부산",
+      "temperature": 6,
+      "minTemperature": 1,
+      "description": "맑음"
+    },
+    {
+      "date": "12-07",
+      "city": "부산",
+      "temperature": 6,
+      "minTemperature": 2,
+      "description": "구름 많음"
+    },
+    {
+      "date": "12-08",
+      "city": "부산",
+      "temperature": 7,
+      "minTemperature": 3,
+      "description": "맑음"
+    },
+    {
+      "date": "12-09",
+      "city": "부산",
+      "temperature": 8,
+      "minTemperature": 4,
+      "description": "구름 조금"
+    },
+    {
+      "date": "12-10",
+      "city": "부산",
+      "temperature": 9,
+      "minTemperature": 5,
+      "description": "맑음"
+    },
+    {
+      "date": "12-11",
+      "city": "부산",
+      "temperature": 10,
+      "minTemperature": 6,
+      "description": "바람 많음"
+    },
+    {
+      "date": "12-12",
+      "city": "부산",
+      "temperature": 9,
+      "minTemperature": 5,
+      "description": "구름 많음"
+    },
+    {
+      "date": "12-13",
+      "city": "부산",
+      "temperature": 8,
+      "minTemperature": 4,
+      "description": "맑음"
+    },
+    {
+      "date": "12-14",
+      "city": "부산",
+      "temperature": 7,
+      "minTemperature": 3,
+      "description": "구름 조금"
+    },
+    {
+      "date": "12-15",
+      "city": "부산",
+      "temperature": 6,
+      "minTemperature": 2,
+      "description": "맑음"
+    },
+    {
+      "date": "12-16",
+      "city": "부산",
+      "temperature": 5,
+      "minTemperature": 1,
+      "description": "구름 많음"
+    },
+    {
+      "date": "12-17",
+      "city": "부산",
+      "temperature": 6,
+      "minTemperature": 2,
+      "description": "맑음"
+    },
+    {
+      "date": "12-18",
+      "city": "부산",
+      "temperature": 7,
+      "minTemperature": 3,
+      "description": "구름 조금"
+    },
+    {
+      "date": "12-19",
+      "city": "부산",
+      "temperature": 8,
+      "minTemperature": 4,
+      "description": "맑음"
+    },
+    {
+      "date": "12-20",
+      "city": "부산",
+      "temperature": 9,
+      "minTemperature": 5,
+      "description": "구름 많음"
+    },
+    {
+      "date": "12-21",
+      "city": "부산",
+      "temperature": 8,
+      "minTemperature": 4,
+      "description": "맑음"
+    },
+    {
+      "date": "12-22",
+      "city": "부산",
+      "temperature": 7,
+      "minTemperature": 3,
+      "description": "구름 조금"
+    },
+    {
+      "date": "12-23",
+      "city": "부산",
+      "temperature": 6,
+      "minTemperature": 2,
+      "description": "맑음"
+    },
+    {
+      "date": "12-24",
+      "city": "부산",
+      "temperature": 6,
+      "minTemperature": 2,
+      "description": "구름 많음"
+    },
+    {
+      "date": "12-25",
+      "city": "부산",
+      "temperature": 7,
+      "minTemperature": 3,
+      "description": "맑음"
+    },
+    {
+      "date": "12-26",
+      "city": "부산",
+      "temperature": 8,
+      "minTemperature": 4,
+      "description": "구름 조금"
+    },
+    {
+      "date": "12-27",
+      "city": "부산",
+      "temperature": 9,
+      "minTemperature": 5,
+      "description": "맑음"
+    },
+    {
+      "date": "12-28",
+      "city": "부산",
+      "temperature": 8,
+      "minTemperature": 4,
+      "description": "구름 많음"
+    },
+    {
+      "date": "12-29",
+      "city": "부산",
+      "temperature": 7,
+      "minTemperature": 3,
+      "description": "맑음"
+    },
+    {
+      "date": "12-30",
+      "city": "부산",
+      "temperature": 6,
+      "minTemperature": 2,
+      "description": "구름 조금"
+    },
+    {
+      "date": "12-31",
+      "city": "부산",
+      "temperature": 5,
+      "minTemperature": 1,
+      "description": "맑음"
+    }
+  ]
+}
