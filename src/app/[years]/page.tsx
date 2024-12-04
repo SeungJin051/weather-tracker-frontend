@@ -2,10 +2,6 @@ import { notFound } from 'next/navigation';
 
 const validYears = ['2018', '2019', '2020', '2021', '2022', '2023'];
 
-export function generateStaticParams() {
-  return validYears.map(year => ({ years: year }));
-}
-
 interface PageProps {
   params: {
     years: string;
