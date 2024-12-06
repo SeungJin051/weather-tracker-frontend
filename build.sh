@@ -1,4 +1,4 @@
 cd ../
 mkdir output
-cp -R ./tune-tracker-frontend/* ./output
-cp -R ./output ./tune-tracker-frontend/
+cp -R ./weather-tracker-frontend/* ./output
+cp -R ./output ./weather-tracker-frontend/

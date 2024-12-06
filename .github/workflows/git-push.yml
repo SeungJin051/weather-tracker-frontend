@@ -22,7 +22,7 @@ jobs:
         with:
           source-directory: 'output'
           destination-github-username: seungjin051
-          destination-repository-name: tune-tracker-frontend
+          destination-repository-name: weather-tracker-frontend
           user-email: ${{ secrets.SEUNGJIN_EMAIL }}
           commit-message: ${{ github.event.commits[0].message }}
           target-branch: main
