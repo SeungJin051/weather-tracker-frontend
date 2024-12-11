@@ -1,4 +1,5 @@
 import './globals.css';
+import Providers from './utils/react-query/providers';
 
 export const metadata = {
   title: 'Weather Tracker',
@@ -25,7 +26,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="font-mono">{children}</body>
+      <body className="font-mono">
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

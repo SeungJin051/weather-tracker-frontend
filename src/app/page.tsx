@@ -1,13 +1,31 @@
+import {
+  dehydrate,
+  HydrationBoundary,
+  QueryClient,
+} from '@tanstack/react-query';
 import Form from './components/Form';
+import Tab from './components/Tab';
+import Predict from './components/Predict';
 
 export default function Home() {
+  const queryClient = new QueryClient();
+
+  const tabs = [
+    {
+      name: '전력 예측',
+      content: <Predict />,
+    },
+    {
+      name: '연간 통계',
+      content: <Form />,
+    },
+  ];
+
   return (
-    <div className="flex flex-col gap-5 mt-52 items-center">
-      <h1 className="text-2xl ">
-        지난 기후를 한눈에! <br />
-        연도를 선택해 통계를 확인하세요.
-      </h1>
-      <Form />
-    </div>
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <div className="flex flex-col items-center gap-5 mt-5">
+        <Tab tabs={tabs} />
+      </div>
+    </HydrationBoundary>
   );
 }
