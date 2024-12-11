@@ -40,9 +40,7 @@ const Tab: React.FC<TabComponentProps> = ({ tabs, index = 0, onChange }) => {
           </li>
         ))}
       </ul>
-      <div className="mt-4 p-4 bg-white shadow-md rounded-md">
-        {tabs[activeTab]?.content}
-      </div>
+      <div className="p-4 mt-4 bg-white">{tabs[activeTab]?.content}</div>
     </div>
   );
 };
