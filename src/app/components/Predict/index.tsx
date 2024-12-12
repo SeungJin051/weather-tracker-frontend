@@ -35,7 +35,7 @@ export default function PowerUsagePrediction() {
   const mutation = useMutation<PredictResponse, Error, PredictData>({
     mutationFn: async data => {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL_FASTAPI}/predict`,
+        `${process.env.NEXT_PUBLIC_BASE_URL_EXPRESS}/predict`,
         {
           method: 'POST',
           headers: {
