@@ -4,14 +4,6 @@ import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import React, { FormEvent, useEffect, useState } from 'react';
 
-type Weather = {
-  date: string;
-  city: string;
-  temperature: number;
-  minTemperature: number;
-  description: string;
-};
-
 export default function Form() {
   const router = useRouter();
 
@@ -20,26 +12,19 @@ export default function Form() {
     const formData = new FormData(event.currentTarget);
     const selectedYear = formData.get('years') as string;
     if (selectedYear) {
-      router.push(`/${selectedYear}`);
+      router.push(`charts//${selectedYear}`);
     }
   };
 
-  const [weatherData, setWeatherData] = useState<Weather[]>([]);
-  const [filteredWeatherData, setFilteredWeatherData] = useState<Weather[]>([]);
-
-  const getTodayInMMDD = (): string => {
-    const koreaTime = new Date();
-    koreaTime.setHours(koreaTime.getHours() + 9);
-    const month = String(koreaTime.getMonth() + 1).padStart(2, '0');
-    const day = String(koreaTime.getDate()).padStart(2, '0');
-    return `${month}-${day}`;
-  };
+  const [filteredWeatherData, setFilteredWeatherData] = useState([]);
 
   useEffect(() => {
     const fetchWeatherData = async () => {
       try {
-        const response = await axios.get('/db/weather.json');
-        setWeatherData(response.data.weather);
+        const response = await axios.get(
+          `${process.env.NEXT_PUBLIC_BASE_URL_EXPRESS}/api/weatherWeek`,
+        );
+        setFilteredWeatherData(response.data);
       } catch (error) {
         console.error('Error fetching weather data:', error);
       }
@@ -47,29 +32,6 @@ export default function Form() {
 
     fetchWeatherData();
   }, []);
-
-  useEffect(() => {
-    if (weatherData.length > 0) {
-      const today = getTodayInMMDD();
-
-      const last7DaysWeather = weatherData.filter(({ date }) => {
-        const [currentMonth, currentDay] = today.split('-').map(Number);
-        const [weatherMonth, weatherDay] = date.split('-').map(Number);
-
-        const diffInDays =
-          (currentMonth - weatherMonth) * 30 + (currentDay - weatherDay);
-        return diffInDays >= 0 && diffInDays <= 6;
-      });
-
-      const sortedWeather = last7DaysWeather.sort(
-        (a, b) =>
-          new Date(`2024-${b.date}`).getTime() -
-          new Date(`2024-${a.date}`).getTime(),
-      );
-
-      setFilteredWeatherData(sortedWeather);
-    }
-  }, [weatherData]);
 
   return (
     <div className="flex flex-col items-center gap-5">
@@ -92,6 +54,7 @@ export default function Form() {
                 <option value="2021">2021년</option>
                 <option value="2022">2022년</option>
                 <option value="2023">2023년</option>
+                <option value="2024">2024년</option>
               </select>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -136,18 +99,25 @@ export default function Form() {
           <ul>
             {filteredWeatherData.map(
               (
-                { date, city, temperature, minTemperature, description },
+                {
+                  _id,
+                  Date: date,
+                  city,
+                  temp: temperature,
+                  minTemp: minTemperature,
+                  cloud: description,
+                },
                 index,
               ) => (
                 <li
-                  key={index}
+                  key={_id || index}
                   className="flex items-center justify-between py-2 border-b"
                 >
                   <div className="w-1/6 text-sm text-left text-gray-500">
                     {date}
                   </div>
                   <div className="w-3/6 text-sm font-semibold text-left">
-                    {city} - {temperature}°C / {minTemperature}°C
+                    {city} : {temperature}°C / {minTemperature}°C
                   </div>
                   <div className="w-1/6 text-sm text-right text-gray-600">
                     {description}
