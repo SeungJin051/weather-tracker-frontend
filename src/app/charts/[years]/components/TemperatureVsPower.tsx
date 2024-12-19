@@ -69,7 +69,7 @@ export default function TemperatureVsPower({
       },
       {
         label: '전력 사용량 (kWh)',
-        data: electricData.map((item: any) => item.totalPowerUsage),
+        data: electricData.map((item: any) => item.averagePowerUsage),
         backgroundColor: 'rgba(255, 99, 132, 0.6)',
         borderColor: 'rgba(255, 99, 132, 1)',
         borderRadius: 10,
