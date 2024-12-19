@@ -3,7 +3,7 @@
 import { useMutation } from '@tanstack/react-query';
 import { useState } from 'react';
 import Ai from './AI/Ai';
-import { PredictData, PredictResponse } from './types';
+import { PredictData, PredictResponse, PredictBillResponse } from './types';
 
 export default function PowerUsagePrediction() {
   const [formData, setFormData] = useState({
@@ -17,6 +17,7 @@ export default function PowerUsagePrediction() {
 
   const [submittedData, setSubmittedData] = useState<PredictData | null>(null);
   const [predictedUsage, setPredictedUsage] = useState<number | null>(null);
+  const [predictedBill, setPredictedBill] = useState<number | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
@@ -28,7 +29,7 @@ export default function PowerUsagePrediction() {
     }));
   };
 
-  const mutation = useMutation<PredictResponse, Error, PredictData>({
+  const usageMutation = useMutation<PredictResponse, Error, PredictData>({
     mutationFn: async data => {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_BASE_URL_EXPRESS}/predict`,
@@ -51,10 +52,44 @@ export default function PowerUsagePrediction() {
     onSuccess: (data, variables) => {
       setSubmittedData(variables);
       setPredictedUsage(data.predicted_power_usage);
+      billMutation.mutate({ usage: data.predicted_power_usage });
     },
-    onError: error => {
+    onError: () => {
       setSubmittedData(null);
       setPredictedUsage(null);
+      setPredictedBill(null);
+    },
+  });
+
+  const billMutation = useMutation<
+    PredictBillResponse,
+    Error,
+    { usage: number }
+  >({
+    mutationFn: async data => {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL_EXPRESS}/predictbill`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        },
+      );
+
+      if (!response.ok) {
+        const result = await response.json();
+        throw new Error(result.error || 'Failed to fetch bill prediction');
+      }
+
+      return response.json();
+    },
+    onSuccess: data => {
+      setPredictedBill(data.predicted_bill);
+    },
+    onError: () => {
+      setPredictedBill(null);
     },
   });
 
@@ -75,16 +110,20 @@ export default function PowerUsagePrediction() {
       }
     }
 
-    mutation.mutate(parsedData);
+    usageMutation.mutate(parsedData);
   };
+
+  const isLoading = usageMutation.isPending || billMutation.isPending;
 
   return (
     <div className="container mx-auto p-4">
       <div className="flex flex-col items-center gap-5">
         <h4 className="block text-xl font-medium text-slate-800">
-          전력 사용량 예측
+          전력 사용량을 예측해보세요
         </h4>
-        <p className="font-light text-slate-500">예측을 위한 데이터 입력</p>
+        <p className="font-light text-slate-500">
+          데이터를 입력하면 사용량과 예상 요금을 알려드립니다.
+        </p>
 
         {/* Input Fields */}
         {[
@@ -150,20 +189,63 @@ export default function PowerUsagePrediction() {
           className="w-full max-w-sm min-w-[200px] px-4 py-2 mt-4 text-sm text-center text-white transition-all border border-transparent rounded-md shadow-md bg-slate-800 hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700"
           type="button"
           onClick={handleSubmit}
+          disabled={isLoading}
         >
-          전송
+          {isLoading ? (
+            <div className="flex items-center justify-center">
+              <svg
+                className="w-5 h-5 mr-2 text-white animate-spin"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8v8h8a8 8 0 01-16 0z"
+                ></path>
+              </svg>
+            </div>
+          ) : (
+            '전송'
+          )}
         </button>
-        {mutation.isError && (
-          <p className="text-red-500">에러: {mutation.error?.message}</p>
+
+        {usageMutation.isError && (
+          <p className="text-red-500">에러: {usageMutation.error?.message}</p>
         )}
-        {mutation.isSuccess && submittedData && predictedUsage !== null && (
-          <div className="mt-4 flex flex-col items-center">
-            <p className="text-green-500">
-              예측된 전력 사용량: {predictedUsage} kWh
-            </p>
-            <Ai data={submittedData} predictedUsage={predictedUsage} />
-          </div>
+        {billMutation.isError && (
+          <p className="text-red-500">에러: {billMutation.error?.message}</p>
         )}
+        {usageMutation.isSuccess &&
+          submittedData &&
+          predictedUsage !== null && (
+            <div className="mt-4 flex flex-col items-center">
+              <p className="text-green-500 border-t-2 p-3">
+                예측된 가구별 전력 사용량: {predictedUsage} kWh
+              </p>
+              {predictedBill !== null && (
+                <>
+                  <p className="text-blue-500">
+                    예측된 가구별 청구 금액: {predictedBill.toLocaleString()} 원
+                  </p>
+                  <Ai
+                    data={submittedData}
+                    predictedUsage={predictedUsage}
+                    predictedBill={predictedBill}
+                  />
+                </>
+              )}
+            </div>
+          )}
       </div>
     </div>
   );

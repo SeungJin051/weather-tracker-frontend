@@ -10,11 +10,13 @@ export interface AiAnalysisRequest {
     month: number;
   };
   predictedUsage: number;
+  predictedBill: number;
 }
 
 export async function POST(request: NextRequest) {
   try {
-    const { data, predictedUsage }: AiAnalysisRequest = await request.json();
+    const { data, predictedUsage, predictedBill }: AiAnalysisRequest =
+      await request.json();
     const apiKey = process.env.OPENAI_API_KEY;
 
     if (!apiKey) {
@@ -28,8 +30,8 @@ export async function POST(request: NextRequest) {
       [규칙]
       - 문장이 자연스럽게 끝나도록 작성
       - 분석 가이드라인은 언급하지 않기
-
-      전문 데이터 분석가로서 다음 기상 데이터를 바탕으로 명확하고 간결한 마크다운 형식의 분석 보고서를 작성해주세요:
+      - 전문 데이터 분석가로서 다음 기상 데이터를 바탕으로 명확하고 간결한 마크다운 형식의 분석 보고서를 작성해주세요.
+      - 알맞지 않은 데이터가 들어오면 피드백 보고서 작성
 
       # 기상 데이터 분석 보고서
 
@@ -40,7 +42,8 @@ export async function POST(request: NextRequest) {
       - **총 강수량**: ${data.precipitation}mm
       - **평균 습도**: ${data.avgRhm}%
       - **월**: ${data.month}월
-      - **예측된 전력 사용량**: ${predictedUsage}kWh
+      - **예측된 가구별  전력 사용량**: ${predictedUsage}kWh
+      - **예측된 가구별  전력 사용량**: ${predictedBill}원
 
       ## 분석 내용
       ### 기온 변동성과 전력 사용량
@@ -71,7 +74,7 @@ export async function POST(request: NextRequest) {
           Authorization: `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
-          model: 'gpt-3.5-turbo-0125',
+          model: 'gpt-3.5-turbo',
           messages: [
             {
               role: 'system',
@@ -81,7 +84,6 @@ export async function POST(request: NextRequest) {
             { role: 'user', content: prompt },
           ],
           temperature: 1,
-          max_tokens: 600, // 충분한 토큰 수로 설정
         }),
       },
     );
