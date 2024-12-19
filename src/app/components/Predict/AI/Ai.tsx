@@ -8,6 +8,7 @@ export default function Ai({ data, predictedUsage }: AiProps) {
   const [analysis, setAnalysis] = useState<string>('');
   const [typingText, setTypingText] = useState<string>('');
   const [errorMessage, setErrorMessage] = useState<string>('');
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
     if (analysis) {
@@ -31,6 +32,7 @@ export default function Ai({ data, predictedUsage }: AiProps) {
     setAnalysis('');
     setTypingText('');
     setErrorMessage('');
+    setIsLoading(true);
 
     try {
       const response = await fetch('/api/ai-analysis', {
@@ -64,6 +66,8 @@ export default function Ai({ data, predictedUsage }: AiProps) {
     } catch (error: any) {
       console.error('AI 분석 중 오류:', error);
       setErrorMessage(error.message || 'AI 분석 중 오류가 발생했습니다.');
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -72,9 +76,43 @@ export default function Ai({ data, predictedUsage }: AiProps) {
       <button
         className="px-4 py-2 mb-4 text-sm text-center text-white transition-all border border-transparent rounded-md shadow-md bg-blue-600 hover:bg-blue-700 focus:bg-blue-700"
         onClick={handleAiAnalysis}
+        disabled={isLoading}
       >
-        AI 분석 실행
+        {isLoading ? (
+          <div className="flex items-center justify-center">
+            <svg
+              className="w-5 h-5 text-white animate-spin"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+              ></circle>
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8v8h8a8 8 0 01-16 0z"
+              ></path>
+            </svg>
+          </div>
+        ) : (
+          'AI 분석 실행'
+        )}
       </button>
+
+      {isLoading && (
+        <div className="w-full max-w-lg p-4 mb-4 text-center bg-gray-100 rounded-md shadow-md">
+          <p className="text-blue-700 animate-pulse">
+            AI가 당신의 질문에 대한 답을 찾고 있습니다..
+          </p>
+        </div>
+      )}
 
       {errorMessage && (
         <div className="w-full max-w-lg p-4 mb-4 bg-red-100 rounded-md shadow-md">
