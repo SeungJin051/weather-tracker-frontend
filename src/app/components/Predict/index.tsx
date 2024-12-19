@@ -17,7 +17,7 @@ export default function PowerUsagePrediction() {
 
   const [submittedData, setSubmittedData] = useState<PredictData | null>(null);
   const [predictedUsage, setPredictedUsage] = useState<number | null>(null);
-  const [predictedBill, setPredictedBill] = useState<number | null>(null);
+  const [totalbill, settotalbill] = useState<number | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
@@ -57,7 +57,7 @@ export default function PowerUsagePrediction() {
     onError: () => {
       setSubmittedData(null);
       setPredictedUsage(null);
-      setPredictedBill(null);
+      settotalbill(null);
     },
   });
 
@@ -86,10 +86,10 @@ export default function PowerUsagePrediction() {
       return response.json();
     },
     onSuccess: data => {
-      setPredictedBill(data.predicted_bill);
+      settotalbill(data.predicted_bill);
     },
     onError: () => {
-      setPredictedBill(null);
+      settotalbill(null);
     },
   });
 
@@ -232,15 +232,15 @@ export default function PowerUsagePrediction() {
               <p className="text-green-500 border-t-2 p-3">
                 예측된 가구별 전력 사용량: {predictedUsage} kWh
               </p>
-              {predictedBill !== null && (
+              {totalbill !== null && (
                 <>
                   <p className="text-blue-500">
-                    예측된 가구별 청구 금액: {predictedBill.toLocaleString()} 원
+                    예측된 가구별 청구 금액: {totalbill.toLocaleString()} 원
                   </p>
                   <Ai
                     data={submittedData}
                     predictedUsage={predictedUsage}
-                    predictedBill={predictedBill}
+                    totalbill={totalbill}
                   />
                 </>
               )}
