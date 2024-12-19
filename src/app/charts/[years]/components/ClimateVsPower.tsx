@@ -78,7 +78,7 @@ export default function ClimateVsPower({
       },
       {
         label: '전력 사용량 (kWh)',
-        data: electricData.map((item: any) => item.totalPowerUsage),
+        data: electricData.map((item: any) => item.averagePowerUsage),
         borderColor: 'rgba(255, 99, 132, 1)',
         backgroundColor: 'rgba(255, 99, 132, 0.2)',
         yAxisID: 'y2',
