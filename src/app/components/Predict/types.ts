@@ -15,7 +15,7 @@ export interface PredictResponse {
 export interface AiProps {
   data: PredictData;
   predictedUsage: number;
-  totalbill: number | null;
+  averageBill: number | null;
 }
 export interface PredictBillResponse {
   predicted_bill: number;

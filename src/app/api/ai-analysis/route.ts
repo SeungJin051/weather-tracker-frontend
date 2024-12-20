@@ -10,12 +10,12 @@ export interface AiAnalysisRequest {
     month: number;
   };
   predictedUsage: number;
-  predictedBill: number;
+  averageBill: number;
 }
 
 export async function POST(request: NextRequest) {
   try {
-    const { data, predictedUsage, predictedBill }: AiAnalysisRequest =
+    const { data, predictedUsage, averageBill }: AiAnalysisRequest =
       await request.json();
     const apiKey = process.env.OPENAI_API_KEY;
 
@@ -43,7 +43,7 @@ export async function POST(request: NextRequest) {
       - **평균 습도**: ${data.avgRhm}%
       - **월**: ${data.month}월
       - **예측된 가구별  전력 사용량**: ${predictedUsage}kWh
-      - **예측된 가구별  전력 사용량**: ${predictedBill}원
+      - **예측된 가구별  전력 사용량**: ${averageBill}원
 
       ## 분석 내용
       ### 기온 변동성과 전력 사용량

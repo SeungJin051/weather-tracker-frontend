@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import { AiProps } from '../types';
 import { useState, useEffect } from 'react';
 
-export default function Ai({ data, predictedUsage }: AiProps) {
+export default function Ai({ data, predictedUsage, averageBill }: AiProps) {
   const [analysis, setAnalysis] = useState<string>('');
   const [typingText, setTypingText] = useState<string>('');
   const [errorMessage, setErrorMessage] = useState<string>('');
@@ -40,7 +40,7 @@ export default function Ai({ data, predictedUsage }: AiProps) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ data, predictedUsage }),
+        body: JSON.stringify({ data, predictedUsage, averageBill }),
       });
 
       if (!response.ok) {
